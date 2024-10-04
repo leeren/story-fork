@@ -53,10 +53,18 @@ contract DeployCore is Script {
         UpgradeEntrypoint upgradeEntrypoint = UpgradeEntrypoint(address(new ERC1967Proxy(impl, "")));
         upgradeEntrypoint.initialize(protocolAccessManagerAddr);
 
+<<<<<<< HEAD
         vm.stopBroadcast();
 
         console2.log("IPTokenStaking deployed at:", address(ipTokenStaking));
         console2.log("IPTokenSlashing deployed at:", address(ipTokenSlashing));
         console2.log("UpgradeEntrypoint deployed at:", address(upgradeEntrypoint));
+=======
+        console2.log("IPTokenStaking deployed at:", address(ipTokenStaking));
+        console2.log("IPTokenSlashing deployed at:", address(ipTokenSlashing));
+        console2.log("UpgradeEntrypoint deployed at:", address(upgradeEntrypoint));
+
+        vm.stopBroadcast();
+>>>>>>> e522302 (feat(contracts): deploy script for iptokenslashing (#159))
     }
 }
