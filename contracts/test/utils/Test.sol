@@ -5,7 +5,7 @@ pragma solidity ^0.8.23;
 
 import { console2 } from "forge-std/console2.sol";
 import { Test as ForgeTest } from "forge-std/Test.sol";
-import { ERC1967Proxy } from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
+import { TransparentUpgradeableProxy } from "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 
 import { IPTokenStaking } from "../../src/protocol/IPTokenStaking.sol";
 import { IPTokenSlashing } from "../../src/protocol/IPTokenSlashing.sol";
@@ -14,6 +14,7 @@ import { Create3 } from "../../src/deploy/Create3.sol";
 
 contract Test is ForgeTest {
     address internal admin = address(0x123);
+    address internal upgradeAdmin = address(0x456);
 
     IPTokenStaking internal ipTokenStaking;
     IPTokenSlashing internal ipTokenSlashing;
